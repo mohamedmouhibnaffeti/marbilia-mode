@@ -10,7 +10,7 @@ const links = [
     { name : "Home", href : "/" },
     { name : "Men", href : "/men" },
     { name : "Women", href : "/women" },
-    { name : "Kids", href : "/kids" }
+    { name : "Teens", href : "/Teens" }
 ]
 
 const Navbar = () => {
@@ -35,7 +35,7 @@ const Navbar = () => {
                     }
                 </nav>
                 <div className="flex divide-x border-r sm:border-l">
-                    <Button variant="outline" className="flex bg-inherit flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-sm">
+                    <Button variant="outline" className="flex bg-inherit flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none border-none">
                             <ShoppingBag />
                             <span className="hidden text-xs font-semibold text-gray-500 sm:block">
                                 Cart

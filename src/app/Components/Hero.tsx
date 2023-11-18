@@ -52,8 +52,8 @@ const Hero = async () => {
                     <Link href="/Women" className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-300">
                         Women
                     </Link>
-                    <Link href="/Kids" className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-300">
-                        Kids
+                    <Link href="/Teens" className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-300">
+                        Teens
                     </Link>
                 </div>
             </div>
