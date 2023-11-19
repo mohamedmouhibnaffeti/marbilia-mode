@@ -4,7 +4,7 @@ import { client } from "@/app/sanity"
 import { Truck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const fetchProducts = async (slug: string) => {
+async function fetchProducts(slug: string){
     const query = `*[_type == "product" && slug.current == "${slug}" ][0]{
                         _id,
                         images,
@@ -20,6 +20,7 @@ const fetchProducts = async (slug: string) => {
 
 const ProductPage = async ({params}: {params: {slug: string}}) => {
     const data: fullProduct = await fetchProducts(params.slug);
+    console.log('data :>> ', data);
     return (
         <div className="mt-48">
             <div className="mx-auto max-w-screen-xl px-4 md:px-8">
