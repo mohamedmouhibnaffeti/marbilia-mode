@@ -4,7 +4,9 @@ import Marbilia from './Images/Marbilia.png'
 import  Image  from "next/image"
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
-import {ShoppingBag} from 'lucide-react'
+import {ShoppingCart} from 'lucide-react'
+import { useShoppingCart } from "use-shopping-cart"
+import { Badge } from '@/components/ui/badge'
 
 const links = [
     { name : "Home", href : "/" },
@@ -15,6 +17,7 @@ const links = [
 
 const Navbar = () => {
     const pathName = usePathname()
+    const { handleCartClick, cartCount } = useShoppingCart()
     return (
         <header className="fixed top-0 mb-8 w-full z-40 border-b glassmorphism">
             <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
@@ -35,8 +38,9 @@ const Navbar = () => {
                     }
                 </nav>
                 <div className="flex divide-x border-r sm:border-l">
-                    <Button variant="outline" className="flex bg-inherit flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none border-none">
-                            <ShoppingBag />
+                    <Button variant="outline" className="flex bg-inherit flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none border-none" onClick={()=>handleCartClick()}>
+                            <Badge className="rounded-full h-5 w-5 items-center justify-center z-10 fixed translate-x-3 md:-translate-y-5 -translate-y-3 bg-red-800">{cartCount}</Badge>
+                            <ShoppingCart/>
                             <span className="hidden text-xs font-semibold text-gray-500 sm:block">
                                 Cart
                             </span>
