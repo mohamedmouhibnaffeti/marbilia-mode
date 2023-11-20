@@ -27,7 +27,7 @@ const CategoryPage = async ({params}: {params: {category: string}}) => {
                 </div>
                 <div className="mt-6 grid grid-cols-1 gap gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                     {data.map((product) => {return (
-                        <div key={product._id} className="group relative bg-slate-900 rounded-b-md">
+                        <div key={product._id} className="group relative product-glassmorphism rounded-b-md">
                             <div className="aspect-square w-full overflow-hidden rounded-xl rounded-b-none bg-gray-200 group-hover:opacity-75 lg:h-80">
                                 <Image src={product.imageUrl} alt="product" className="w-full h-full object-cover object-center lg:h-full lg:w-full cursor-pointer" width={300} height={300} />
                             </div>
