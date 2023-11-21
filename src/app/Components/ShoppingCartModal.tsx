@@ -7,21 +7,10 @@ import {
 } from "@/components/ui/sheet"
 import {useShoppingCart} from "use-shopping-cart"
 import Image from 'next/image'
-import { Button } from "@/components/ui/button"
+import { DialogComponent } from "./Dialog"
 
 const ShoppingCartModal = () => {
     const {cartCount, shouldDisplayCart, handleCartClick, cartDetails, removeItem, totalPrice, redirectToCheckout} = useShoppingCart()
-    async function handleCheckoutClick(event: any) {
-        event.preventDefault()
-        try{
-            const result = await redirectToCheckout()
-            if(result?.error){
-                console.log('result :>> ', result);
-            }
-        }catch(error){
-            console.log('error :>> ', error);
-        }
-    }
     return(
         <Sheet open={shouldDisplayCart} onOpenChange={()=>handleCartClick()}>
             <SheetContent className="sm:max-w-lg w-[90vw">
@@ -68,7 +57,8 @@ const ShoppingCartModal = () => {
                         </div>
                         <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes are calculated at checkout</p>
                         <div className="mt-6 ">
-                            <Button className="w-full" onClick={handleCheckoutClick}>Checkout</Button>
+                            <DialogComponent />
+                            {/*<Button className="w-full" onClick={handleCheckoutClick}>Checkout</Button>*/}
                         </div>
                         <div className="mt-6 flex justify-center text-center text-sm text-gray-300">Or &nbsp;<button type="button" className="text-gray-300 transition delay-75 hover:text-gray-300/70 font-bold" onClick={()=>handleCartClick()}>Continue Shopping</button></div>
                     </div>

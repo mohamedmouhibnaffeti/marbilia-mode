@@ -15,8 +15,8 @@ const links = [
 
 const Footer = () =>{
     const pathName = usePathname()
-    const handleEmailClick = () => {
-        navigator.clipboard.writeText('marbiliamode@gmail.com')
+    const handleEmailClick = async () => {
+        await navigator.clipboard.writeText('marbiliamode@gmail.com')
         alert('Copied Email to Clipboard')
     }
     return(
@@ -42,10 +42,10 @@ const Footer = () =>{
             <div className="flex justify-center items-center flex-col ">
                 <p className="text-white text-md text-center">Reach us out at</p>
                 <div className="flex gap-8 mt-5 cursor-pointer">
-                    <Mail className="transform delay-150 hover:-translate-y-[3px]" onClick={handleEmailClick} />
+                    <Mail className="transform delay-75 hover:-translate-y-[3px]" onClick={handleEmailClick} />
                     <a href="https://www.facebook.com/profile.php?id=61553390913538"><Facebook className="transform delay-150 hover:-translate-y-[3px]"/></a>
-                    <Instagram className="transform delay-150 hover:-translate-y-[3px]" />
-                    <Linkedin className="transform delay-150 hover:-translate-y-[3px]" />
+                    <Instagram className="transform delay-75 hover:-translate-y-[3px]" />
+                    <Linkedin className="transform delay-75 hover:-translate-y-[3px]" />
                 </div>
             </div>
             <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-7" />
