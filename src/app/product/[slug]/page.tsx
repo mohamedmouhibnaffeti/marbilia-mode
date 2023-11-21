@@ -1,4 +1,3 @@
-"use client"
 import ImageGallery from "@/app/Components/imageGallery"
 import { fullProduct } from "../../interface"
 import { client } from "@/app/sanity"
