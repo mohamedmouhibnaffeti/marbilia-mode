@@ -39,7 +39,7 @@ const Navbar = () => {
                 </nav>
                 <div className="flex divide-x border-r sm:border-l">
                     <Button variant="outline" className="flex bg-inherit flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none border-none" onClick={()=>handleCartClick()}>
-                            <Badge className="rounded-full h-5 w-5 items-center justify-center z-10 fixed translate-x-3 md:-translate-y-5 -translate-y-3 bg-red-800">{cartCount}</Badge>
+                            <Badge className="rounded-full h-5 w-5 items-center justify-center z-10 fixed translate-x-3 md:-translate-y-5 -translate-y-3 bg-red-800 hover:bg-red-800">{cartCount}</Badge>
                             <ShoppingCart/>
                             <span className="hidden text-xs font-semibold text-gray-500 sm:block">
                                 Cart

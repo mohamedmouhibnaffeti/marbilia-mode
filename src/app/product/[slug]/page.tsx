@@ -1,9 +1,12 @@
+"use client"
 import ImageGallery from "@/app/Components/imageGallery"
 import { fullProduct } from "../../interface"
 import { client } from "@/app/sanity"
 import { Truck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AddToBag from "@/app/Components/AddToBag"
+import { DialogComponent } from "@/app/Components/Dialog"
+
 
 async function fetchProducts(slug: string){
     const query = `*[_type == "product" && slug.current == "${slug}" ][0]{
@@ -44,7 +47,6 @@ const ProductPage = async ({params}: {params: {slug: string}}) => {
                         </div>
                         <div className="flex gap-2.5">
                             <AddToBag  currency="TND" description={data.description} image={data.images[0]} name={data.name} price={data.price} key={data._id} />
-                            <Button variant="secondary">Checkout now</Button>
                         </div>
                         <p className="mt-12 text-base text-gray-400 tracking-wide">{data.description}</p>
                     </div>
